@@ -35,6 +35,7 @@ public class Settings {
         Path jsonFile = Paths.get("serverConfigs\\"+guild.getId()+".json");
         if (!Files.exists(jsonFile)) {
             FileWriter fileWriter = new FileWriter(jsonFile.toFile());
+            fileWriter.write("{ }");
             fileWriter.close();
             new Settings(event, admins, setting, variable);
         } else {

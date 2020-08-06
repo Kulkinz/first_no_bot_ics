@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import maven_bot.commands.Connor;
 import maven_bot.commands.Convert;
+import maven_bot.commands.Giveme;
 import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
 import maven_bot.commands.Ping;
@@ -78,8 +79,22 @@ public class CommandSelector {
                     .queue();
                 }
                 break;
+            case "giveme":
+                try {
+                    if (args.length > 2) {
+                        new Giveme(event, admins, args[1], args[2]);
+                    } else {
+                        new Giveme(event, admins, args[1]);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    MessageChannel channel = event.getChannel();
+                    channel.sendMessage("Unable to set roles")
+                    .queue();
+                }
+                break;
             case "help":
-                new Help(event);
+                new Help(event, admins);
                 break;
             case "settings":
                 try {
