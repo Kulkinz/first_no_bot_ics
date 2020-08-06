@@ -162,3 +162,10 @@ bin/
 
 # Config files
 config.json
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+target/surefire-reports/maven_bot.AppTest.txt
+target/surefire-reports/TEST-maven_bot.AppTest.xml
+target/maven-archiver/pom.properties
+rolls.json

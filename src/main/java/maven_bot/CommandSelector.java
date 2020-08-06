@@ -3,10 +3,12 @@ package maven_bot;
 import java.util.Calendar;
 
 import maven_bot.commands.Connor;
+import maven_bot.commands.Convert;
 import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
 import maven_bot.commands.Ping;
 import maven_bot.commands.Roll;
+import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class CommandSelector {
@@ -59,6 +61,21 @@ public class CommandSelector {
 
                 System.out.println("Amount: " + amountToRoll + " Sides: " + sides + " Modifier: " + modifier);
                 new Roll(event, amountToRoll, sides, modifier);
+                break;
+            case "convert":
+                double amount = Double.parseDouble(args[1]);
+                try {
+                    Convert.Conversion from = Convert.Conversion.valueOf(args[2].toUpperCase());
+                    Convert.Conversion to = Convert.Conversion.valueOf(args[3].toUpperCase());
+                    new Convert(event, amount, from, to);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println("Input Units: " + args[2]);
+                    System.err.println("Output Units: " + args[3]);
+                    MessageChannel channel = event.getChannel();
+                    channel.sendMessage("Unable to parse specified units. Either it was misspelled or isn't in the system.")
+                    .queue();
+                }
                 break;
             case "help":
                 new Help(event);
