@@ -8,11 +8,12 @@ import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
 import maven_bot.commands.Ping;
 import maven_bot.commands.Roll;
+import maven_bot.commands.Settings;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class CommandSelector {
-    public CommandSelector(MessageReceivedEvent event, String message) {
+    public CommandSelector(MessageReceivedEvent event, String message, boolean admins) {
         String[] args = message.substring(1).trim().split(" ");
         String command = args[0];
         //message.content.slice(prefix.length).trim().split(/ +/g);
@@ -79,6 +80,20 @@ public class CommandSelector {
                 break;
             case "help":
                 new Help(event);
+                break;
+            case "settings":
+                try {
+                    if (args.length > 2) {
+                        new Settings(event, admins, args[1], args[2]);
+                    } else {
+                        new Settings(event, admins);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    MessageChannel channel = event.getChannel();
+                    channel.sendMessage("Unable to set settings")
+                    .queue();
+                }
                 break;
         }
     }

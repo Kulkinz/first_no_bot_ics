@@ -169,3 +169,4 @@ target/surefire-reports/maven_bot.AppTest.txt
 target/surefire-reports/TEST-maven_bot.AppTest.xml
 target/maven-archiver/pom.properties
 rolls.json
+*.json
