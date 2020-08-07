@@ -21,7 +21,7 @@ public class Help {
 			// .addField(Bot.prefix + "multiroll d[number] <amount> <+/-modifier> <sum=true/false>", "Rolls multiple dice up to the given number. Can set amount, modifier, or if you would like to sum the numbers up.", false)
 			// .addField(Bot.prefix + "xkcd [number]", "Pulls up the respective xkcd comic.", false)
 			// .addField(Bot.prefix + "whatif [number]", "Pulls up the respective xkcd what if?.", false)
-            // .addField(Bot.prefix + "github", "Links to the github.", false)
+            .addField(App.prefix + "github", "Links to the github.", false)
             .addField(App.prefix + "giveme [role]", "Assigns a specified role from the list.", false)
             .addField(App.prefix + "giveme remove [role]", "Removes an assignable role from the user.", false)
             .addField(App.prefix + "giveme list", "Lists all assignable roles", false)

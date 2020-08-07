@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import maven_bot.commands.Connor;
 import maven_bot.commands.Convert;
+import maven_bot.commands.Github;
 import maven_bot.commands.Giveme;
 import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
@@ -33,6 +34,9 @@ public class CommandSelector {
                 break;
             case "connor":
                 new Connor(event);
+                break;
+            case "github":
+                new Github(event);
                 break;
             case "roll":
                 String[] dice = args[1].split("d");
