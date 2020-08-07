@@ -8,6 +8,7 @@ import maven_bot.commands.Giveme;
 import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
 import maven_bot.commands.Ping;
+import maven_bot.commands.Pong;
 import maven_bot.commands.Roll;
 import maven_bot.commands.Settings;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -23,6 +24,9 @@ public class CommandSelector {
         switch (command) {
             case "ping":
                 new Ping(event);
+                break;
+            case "pong":
+                new Pong(event);
                 break;
             case "isaiah":
                 new Isaiah(event);
