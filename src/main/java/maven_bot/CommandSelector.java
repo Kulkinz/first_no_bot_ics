@@ -13,6 +13,7 @@ import maven_bot.commands.Ping;
 import maven_bot.commands.Pong;
 import maven_bot.commands.Roll;
 import maven_bot.commands.Settings;
+import maven_bot.commands.XKCD;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -41,6 +42,13 @@ public class CommandSelector {
                 break;
             case "goodnight":
                 new Goodnight(event);
+                break;
+            case "xkcd":
+                if (args.length > 1) {
+                    new XKCD(event, args[1]);
+                } else {
+                    new XKCD(event, "");
+                }
                 break;
             case "roll":
                 String[] dice = args[1].split("d");
