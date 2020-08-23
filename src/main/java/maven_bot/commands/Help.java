@@ -19,7 +19,7 @@ public class Help {
 			.addField(App.prefix + "help", "This command.", false)
 			.addField(App.prefix + "roll [amount]d[number] <+/-modifier>", "Rolls a dice up to the given number x amount of times. Can set an optional modifier.", false)
 			// .addField(Bot.prefix + "multiroll d[number] <amount> <+/-modifier> <sum=true/false>", "Rolls multiple dice up to the given number. Can set amount, modifier, or if you would like to sum the numbers up.", false)
-			// .addField(Bot.prefix + "xkcd [number]", "Pulls up the respective xkcd comic.", false)
+			.addField(App.prefix + "xkcd [number]", "Pulls up the respective xkcd comic.", false)
 			// .addField(Bot.prefix + "whatif [number]", "Pulls up the respective xkcd what if?.", false)
             .addField(App.prefix + "github", "Links to the github.", false)
             .addField(App.prefix + "giveme [role]", "Assigns a specified role from the list.", false)
