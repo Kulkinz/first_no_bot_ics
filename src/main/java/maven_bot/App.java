@@ -24,10 +24,15 @@ public class App extends ListenerAdapter {
         String token = (String) config.get("token");
         prefix = config.get("prefix").toString().charAt(0);
 
-        new JDABuilder(token)
-                .addEventListeners(new App())
-            .setActivity(Activity.playing("Ayyyy"))
-            .build();
+        JDABuilder builder = JDABuilder.createDefault(token);
+        builder.setActivity(Activity.watching("You"));
+        builder.addEventListeners(new App());
+
+        builder.build();
+        //new JDABuilder(token)
+        //        .addEventListeners(new App())
+            // .setActivity(Activity.playing("Ayyyy"))
+            // .build();
         System.out.println("Booted up");
     }
 
