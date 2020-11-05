@@ -2,7 +2,7 @@ package maven_bot;
 
 import java.util.Calendar;
 
-import maven_bot.commands.Connor;
+import maven_bot.commands.Stealth;
 import maven_bot.commands.Convert;
 import maven_bot.commands.Github;
 import maven_bot.commands.Giveme;
@@ -34,8 +34,10 @@ public class CommandSelector {
             case "isaiah":
                 new Isaiah(event);
                 break;
-            case "connor":
-                new Connor(event);
+            case "stealth":
+                if (args.length > 1) {
+                    new Stealth(event, args[1]);
+                }
                 break;
             case "github":
                 new Github(event);
