@@ -22,6 +22,7 @@ public class Giveme {
     public Giveme(MessageReceivedEvent event, boolean admins, String request, String role) throws Exception {
         Guild guild = event.getGuild();
         MessageChannel channel = event.getChannel();
+        role = role.toLowerCase();
 
         Path jsonFile = Paths.get("serverConfigs\\giveme\\"+guild.getId()+".json");
         if (!Files.exists(jsonFile)) {
