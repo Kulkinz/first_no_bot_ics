@@ -16,7 +16,7 @@ public class Stealth {
         } catch (Exception e) {
             System.out.println("Could not delete");
         }
-        channel.sendMessage("ping")
+        channel.sendMessage(ping)
         .delay(5, TimeUnit.MILLISECONDS)
         .flatMap(Message::delete)
         .queue();
