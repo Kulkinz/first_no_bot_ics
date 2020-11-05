@@ -15,8 +15,6 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.internal.requests.Route;
-import net.dv8tion.jda.internal.requests.Route.Roles;
 
 public class Giveme {
     public Giveme(MessageReceivedEvent event, boolean admins, String request, String role) throws Exception {
