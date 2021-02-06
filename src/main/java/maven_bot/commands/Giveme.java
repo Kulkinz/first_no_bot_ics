@@ -30,7 +30,7 @@ public class Giveme {
             new Giveme(event, admins, request, role);
         } else {
             JSONObject giveMeList = (JSONObject) new JSONParser().parse(new FileReader(jsonFile.toFile()));
-            List<Role> roles = event.getJDA().getRolesByName(role, true);
+            List<Role> roles = event.getGuild().getRolesByName(role, true);
             switch (request) {
                 case "list":
                     channel.sendMessage("The list of available roles are: " + giveMeList.keySet().toString())
