@@ -11,6 +11,7 @@ import maven_bot.commands.Help;
 import maven_bot.commands.Isaiah;
 import maven_bot.commands.Ping;
 import maven_bot.commands.Pong;
+import maven_bot.commands.Quote;
 import maven_bot.commands.Roll;
 import maven_bot.commands.Settings;
 import maven_bot.commands.XKCD;
@@ -101,6 +102,24 @@ public class CommandSelector {
                     .queue();
                 }
                 break;
+
+
+            case "quote":
+
+                String[] splitQuotes = message.split("\"");
+
+                try {
+                    new Quote(event, splitQuotes[1], splitQuotes[3], splitQuotes[5]);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println("Invalid arguments: " + message);
+                    MessageChannel channel = event.getChannel();
+                    channel.sendMessage("Unable to create quote. Either the syntax was wrong, or something has really gone wrong")
+                    .queue();
+                }
+                break;
+
+
             case "giveme":
                 try {
                     if (args.length > 2) {
